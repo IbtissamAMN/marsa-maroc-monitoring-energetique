@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SME — Système de Monitoring Énergétique · Port d’Agadir</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F2F6F7;--surf:#fff;--ink:#12303F;--mut:#5B7380;--line:#D5E1E5;--navy:#0E2A3B;--teal:#157F86;--amb:#C97A12;--red:#B83A32;--ok:#2B8A57;--c1:#157F86;--c2:#C97A12;--c3:#5A6FD6;--c4:#B83A32;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1C27;--surf:#10293A;--ink:#E4EEF2;--mut:#93AAB6;--line:#21404F;--navy:#06131B;--teal:#3FC1C9;--amb:#F2A43A;--red:#F07368;--ok:#58C98A;--c1:#3FC1C9;--c2:#F2A43A;--c3:#8C9CFF;--c4:#F07368}}
+:root[data-theme="dark"]{--bg:#0A1C27;--surf:#10293A;--ink:#E4EEF2;--mut:#93AAB6;--line:#21404F;--navy:#06131B;--teal:#3FC1C9;--amb:#F2A43A;--red:#F07368;--ok:#58C98A;--c1:#3FC1C9;--c2:#F2A43A;--c3:#8C9CFF;--c4:#F07368}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 'Public Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Barlow Semi Condensed',system-ui,sans-serif;margin:0;line-height:1.1;font-weight:600}
+a{color:inherit}button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--amb);outline-offset:2px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);color:#EAF3F5;display:flex;align-items:center;gap:16px;padding:10px 20px;flex-wrap:wrap}
+header.top b{font:600 19px 'Barlow Semi Condensed';letter-spacing:.3px}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav a{text-decoration:none;padding:6px 12px;border-radius:6px;color:#B9CDD4;font-weight:500;font-size:14px}
+nav a[aria-current=page]{background:#1D4559;color:#fff}
+.tg{background:none;border:1px solid #3A5B6B;color:#EAF3F5;border-radius:6px;padding:5px 10px}
+main{max-width:1180px;margin:0 auto;padding:24px 20px 60px}
+.hero{background:var(--navy);color:#EAF3F5;padding:64px 20px 56px}
+.hero div{max-width:1180px;margin:0 auto}
+.hero h1{font-size:clamp(34px,6vw,60px);max-width:16ch}
+.hero p{max-width:60ch;color:#B9CDD4;font-size:17px;margin:18px 0 26px}
+.btn{display:inline-block;background:var(--amb);color:#1A1204;border:0;border-radius:6px;padding:11px 20px;font-weight:600;text-decoration:none}
+.btn.o{background:none;border:1px solid #3A5B6B;color:#EAF3F5;margin-left:8px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h3{font-size:19px;margin-bottom:6px}.card p{margin:0;color:var(--mut)}
+.k{font:600 34px 'Barlow Semi Condensed'}.kl{color:var(--mut);font-size:13px}
+.sec{margin:36px 0 14px;font-size:26px}
+.note{border-left:4px solid var(--amb);background:var(--surf);padding:10px 14px;border-radius:0 6px 6px 0;color:var(--mut);font-size:13.5px;margin:0 0 18px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mut);font-weight:500}
+.b{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12.5px;font-weight:600;border:1px solid currentColor}
+.ok{color:var(--ok)}.wa{color:var(--amb)}.er{color:var(--red)}
+select,input{font:inherit;background:var(--surf);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+svg{width:100%;height:auto;display:block}svg text{fill:var(--mut);font:11px 'Public Sans'}
+.lg{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin-top:8px}.lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.sm{padding:4px 10px;border:1px solid var(--line);background:var(--surf);color:var(--ink);border-radius:6px;font-size:13px}
+#app[hidden],#site[hidden]{display:none}
+footer{color:var(--mut);font-size:13px;padding:20px;text-align:center}
+@media(prefers-reduced-motion:no-preference){.hero h1{animation:in .6s ease-out}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style></head><body>
+<header class="top"><b>SME · Marsa Maroc · Port d’Agadir</b>
+<nav id="nav" aria-label="Navigation principale"></nav>
+<button class="tg" id="th" aria-label="Changer de thème">Thème</button></header>
+
+<section id="site">
+<div class="hero"><div>
+<h1>Suivez l’énergie des six postes électriques du port.</h1>
+<p>Plateforme de monitoring énergétique de la DEPA : mesures Modbus TCP/IP, indicateurs de performance énergétique, situation de référence et alertes, conformes à la démarche ISO 50001:2018.</p>
+<a class="btn" href="#tableau">Ouvrir l’application</a><a class="btn o" href="#cahier">Voir le périmètre</a></div></div>
+<main>
+<h2 class="sec" style="margin-top:0">Ce que la plateforme permet</h2>
+<div class="grid" id="feat"></div>
+<h2 class="sec" id="cahier">Du cahier des charges à la recette</h2>
+<p class="note">Marché 12/DEPA/2026. Les points marqués « à confirmer » (noms des postes, registres Modbus, formules d’IPE, seuils) restent à valider avec la DEPA et le CPS original.</p>
+<div class="grid" id="steps"></div>
+</main></section>
+
+<section id="app" hidden><main id="view"></main></section>
+<footer>Maquette fonctionnelle avec données de démonstration simulées · Réf. 12/DEPA/2026</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const R=[['accueil','Accueil'],['tableau','Tableau de bord'],['postes','Postes et compteurs'],['courbes','Courbes'],['ipe','IPE et SER'],['alertes','Alertes'],['rapports','Rapports']];
+$('#nav').innerHTML=R.map(r=>`<a href="#${r[0]}" data-r="${r[0]}">${r[1]}</a>`).join('');
+$('#feat').innerHTML=[['Mesure et acquisition','Lecture Modbus TCP/IP, horodatage, qualité de lecture et dernière communication de chaque compteur.'],['IPE et SER','Indicateurs documentés et comparaison à la situation énergétique de référence, avec historique des versions.'],['Alertes','Perte de communication, donnée invalide, dépassement de seuil : prise en charge et clôture tracées.'],['Reporting','Synthèses par période, par poste et par point de comptage pour la revue énergétique.'],['Données fiables','Une mesure ancienne n’est jamais présentée comme du temps réel : la fraîcheur reste visible.'],['Habilitations','Administrateur, responsable énergie, exploitant, lecteur ; actions sensibles journalisées.']].map(f=>`<div class="card"><h3>${f[0]}</h3><p>${f[1]}</p></div>`).join('');
+$('#steps').innerHTML=['Inventaire des six postes et des points existants','Architecture réseau et plan d’adressage','Installation et configuration Modbus','Intégration sans double comptage','Essais de bout en bout (15 tests)','Formation des exploitants et réception'].map((s,i)=>`<div class="card"><h3>Étape ${i+1}</h3><p>${s}</p></div>`).join('');
+
+// Données de démonstration (déterministes)
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const H=Array.from({length:24},(_,i)=>i+'h');
+const P=[1,2,3,4,5,6].map(n=>({id:'P'+n,nom:'Poste '+n,m:[0,1].map(j=>{const base=40+rnd()*90;
+ const s=H.map((_,h)=>Math.round(base*(.55+.45*Math.sin((h-6)/24*Math.PI*2)**2+rnd()*.12)*10)/10);
+ return{id:`CPT-${n}${'AB'[j]}`,ip:`10.20.${n}.${10+j}`,s,fr:rnd()*40|0,ok:true}})}));
+P[2].m[1].ok=false;P[2].m[1].fr=190;for(let h=14;h<24;h++)P[2].m[1].s[h]=null;
+P[4].m[0].s[9]=null;P[4].m[0].s[10]=null;
+const allM=P.flatMap(p=>p.m.map(m=>({...m,p})));
+const sum=i=>P.map(p=>p.m.reduce((a,m)=>a+(m.s[i]||0),0));
+const AL=[{id:1,t:'Perte de communication',e:'CPT-3B',d:'02/11 14:05',v:'—',st:'Nouvelle',pr:'Haute',h:[]},{id:2,t:'Donnée manquante',e:'CPT-5A',d:'02/11 09:00',v:'absente (2 h)',st:'Prise en charge',pr:'Moyenne',h:['Vérification du câblage demandée']},{id:3,t:'Seuil dépassé (exemple)',e:'Poste 2',d:'01/11 19:40',v:'138 kW',st:'Clôturée',pr:'Basse',h:['Charge ponctuelle, aucune action']}];
+const cls=s=>s=='Nouvelle'?'er':s=='Clôturée'?'ok':'wa';
+
+// Graphique en lignes (null = trou de données)
+function chart(series,unit){const W=720,Hh=260,m={l:44,r:10,t:10,b:24};const all=series.flatMap(s=>s.v).filter(x=>x!=null);const mx=Math.ceil(Math.max(...all)*1.1/10)*10||10;
+const X=i=>m.l+i*(W-m.l-m.r)/23,Y=v=>m.t+(1-v/mx)*(Hh-m.t-m.b);let g='';
+for(let k=0;k<=4;k++){const v=mx*k/4;g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${m.l-6}" y="${Y(v)+4}" text-anchor="end">${Math.round(v)}</text>`}
+for(let i=0;i<24;i+=3)g+=`<text x="${X(i)}" y="${Hh-6}" text-anchor="middle">${i}h</text>`;
+series.forEach((s,k)=>{let d='',pen=false;s.v.forEach((v,i)=>{if(v==null){pen=false;return}d+=(pen?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);pen=true});g+=`<path d="${d}" fill="none" stroke="var(--c${k%4+1})" stroke-width="2.2"/>`});
+return `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Courbe en ${unit}, 24 heures"><text x="${m.l}" y="9">${unit}</text>${g}</svg><div class="lg">${series.map((s,k)=>`<span><i style="background:var(--c${k%4+1})"></i>${s.n}</span>`).join('')}</div>`}
+const fresh=m=>!m.ok?'<span class="b er">Perdu</span>':m.fr>30?'<span class="b wa">Ancien</span>':'<span class="b ok">À jour</span>';
+
+const V={
+tableau(){const tot=sum(23).reduce((a,b)=>a+b,0),e=H.reduce((a,_,i)=>a+sum(i).reduce((x,y)=>x+y,0),0),ok=allM.filter(m=>m.ok).length;
+return `<h2>Tableau de bord du site</h2><p class="note">Données de démonstration simulées. Les noms des postes et la liste des compteurs sont à confirmer lors de l’inventaire terrain.</p>
+<div class="grid"><div class="card"><div class="k">${Math.round(tot)} kW</div><div class="kl">Puissance active totale (dernier relevé)</div></div><div class="card"><div class="k">${Math.round(e).toLocaleString('fr-FR')} kWh</div><div class="kl">Énergie estimée sur 24 h</div></div><div class="card"><div class="k">${ok} / ${allM.length}</div><div class="kl">Compteurs en communication</div></div><div class="card"><div class="k">${AL.filter(a=>a.st!='Clôturée').length}</div><div class="kl">Alertes ouvertes</div></div></div>
+<h3 class="sec">Puissance par poste sur 24 h</h3><div class="card">${chart(P.map((p,i)=>({n:p.nom,v:H.map((_,h)=>sum(h)[i])})).slice(0,4),'kW')}<div class="kl" style="margin-top:6px">Quatre premiers postes affichés ; tous sont consultables dans « Courbes ».</div></div>
+<h3 class="sec">État des postes</h3><div class="card tw"><table><tr><th>Poste</th><th>Puissance</th><th>Compteurs</th><th>Dernière communication</th><th>État</th></tr>${P.map(p=>{const w=p.m.find(m=>!m.ok);return `<tr><td>${p.nom}</td><td>${Math.round(p.m.reduce((a,m)=>a+(m.s[23]||0),0))} kW</td><td>${p.m.filter(m=>m.ok).length}/${p.m.length}</td><td>il y a ${Math.max(...p.m.map(m=>m.fr))} min</td><td>${w?'<span class="b er">Incident</span>':'<span class="b ok">Normal</span>'}</td></tr>`}).join('')}</table></div>`},
+postes(){return `<h2>Postes et compteurs</h2><p class="note">Chaque compteur possède un identifiant, une adresse réseau, un protocole et un point de comptage. Les registres Modbus sont configurables, jamais codés en dur.</p><div class="card tw"><table><tr><th>Poste</th><th>Compteur</th><th>Adresse IP (exemple)</th><th>Protocole</th><th>Dernier relevé</th><th>Fraîcheur</th></tr>${allM.map(m=>`<tr><td>${m.p.nom}</td><td>${m.id}</td><td>${m.ip}</td><td>Modbus TCP/IP</td><td>il y a ${m.fr} min</td><td>${fresh(m)}</td></tr>`).join('')}</table></div>`},
+courbes(){return `<h2>Courbes et historique</h2><div class="bar"><label>Poste <select id="sp">${P.map((p,i)=>`<option value="${i}">${p.nom}</option>`).join('')}</select></label><label>Grandeur <select id="sg"><option value="1">Puissance active (kW)</option><option value=".48">Puissance réactive (kvar)</option></select></label></div><div class="card" id="cc"></div>`},
+ipe(){const ser=P.map(()=>Math.round(900+rnd()*900)),obs=P.map((p,i)=>Math.round(H.reduce((a,_,h)=>a+sum(h)[i],0)*(.95+rnd()*.15)));
+return `<h2>IPE et situation énergétique de référence</h2><p class="note">Formules, période de référence et variables de normalisation à valider avec le responsable énergie de la DEPA. Les valeurs ci-dessous illustrent la présentation uniquement.</p><div class="card tw"><table><tr><th>Poste</th><th>Référence SER (kWh/jour)</th><th>Observé (kWh/jour)</th><th>Écart</th></tr>${P.map((p,i)=>{const e=(obs[i]-ser[i])/ser[i]*100;return `<tr><td>${p.nom}</td><td>${ser[i]}</td><td>${obs[i]}</td><td class="${e>5?'er':e<-5?'ok':''}"><b>${e>0?'+':''}${e.toFixed(1)} %</b></td></tr>`}).join('')}</table></div>`},
+alertes(){return `<h2>Alertes</h2><p class="note">Chaque alerte conserve son type, son équipement, sa valeur, son état et l’historique des actions.</p><div class="card tw"><table><tr><th>Type</th><th>Équipement</th><th>Détection</th><th>Valeur</th><th>Priorité</th><th>État</th><th>Action</th></tr>${AL.map(a=>`<tr><td>${a.t}</td><td>${a.e}</td><td>${a.d}</td><td>${a.v}</td><td>${a.pr}</td><td><span class="b ${cls(a.st)}">${a.st}</span></td><td>${a.st=='Nouvelle'?`<button class="sm" data-a="${a.id}">Prendre en charge</button>`:a.st=='Prise en charge'?`<button class="sm" data-a="${a.id}">Clôturer</button>`:'—'}</td></tr>${a.h.length?`<tr><td colspan="7" class="kl">Historique : ${a.h.join(' ; ')}</td></tr>`:''}`).join('')}</table></div>`},
+rapports(){return `<h2>Rapports énergétiques</h2><p class="note">Modèles, périodicités et formats d’export à valider lors des ateliers de cadrage.</p><div class="grid">${['Synthèse des consommations par période','Comparaison entre postes et points de comptage','Suivi des IPE','Comparaison avec la SER','Alertes et indisponibilités de mesure','Complétude et qualité des données'].map(r=>`<div class="card"><h3>${r}</h3><p>Périmètre, période, unités et méthode de calcul tracés.</p></div>`).join('')}</div>`}};
+function drawC(){const p=P[$('#sp').value],f=+$('#sg').value;$('#cc').innerHTML=chart(p.m.map(m=>({n:m.id+(m.ok?'':' (communication perdue)'),v:m.s.map(x=>x==null?null:Math.round(x*f*10)/10)})),f==1?'kW':'kvar')}
+function route(){const r=(location.hash||'#accueil').slice(1).replace('cahier','accueil');const app=r!='accueil'&&V[r];
+$('#site').hidden=!!app;$('#app').hidden=!app;if(app){$('#view').innerHTML=V[r]();if(r=='courbes'){drawC();$('#sp').onchange=$('#sg').onchange=drawC}
+if(r=='alertes')document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{const a=AL.find(x=>x.id==b.dataset.a);a.st=a.st=='Nouvelle'?'Prise en charge':'Clôturée';a.h.push('Action enregistrée '+new Date().toLocaleTimeString('fr-FR'));route()})}
+document.querySelectorAll('nav a').forEach(a=>a.toggleAttribute('aria-current',a.dataset.r==(app?r:'accueil')));if(a=document.querySelector('nav a[aria-current]'))a.setAttribute('aria-current','page');window.scrollTo(0,0)}
+$('#th').onclick=()=>{const d=document.documentElement,c=d.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');d.dataset.theme=c=='dark'?'light':'dark'};
+addEventListener('hashchange',route);route();
+</script></body></html>
